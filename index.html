@@ -6,150 +6,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <style>
-:root{
---bg:#f6f4ef;
---card:#fff;
---ink:#1d1d1f;
---mut:#6b6b70;
---acc:#2f6fed;
---ok:#1f9d55;
---sel:#ffd54a;
---line:#e3e0d8;
-box-sizing:border-box;
-padding-top:env(safe-area-inset-top,0px);
-padding-bottom:env(safe-area-inset-bottom,0px)
+:root {
+  --bg: #f6f4ef;
+  --card: #fff;
+  --ink: #1d1d1f;
+  --mut: #6b6b70;
+  --acc: #2f6fed;
+  --ok: #1f9d55;
+  --sel: #ffd54a;
+  --line: #e3e0d8;
 }
 
-@media (prefers-color-scheme:dark){
-:root:not([data-theme="light"]){
---bg:#17171a;
---card:#232328;
---ink:#f2f2f4;
---mut:#a0a0a8;
---acc:#6a9bff;
---ok:#43c47a;
---sel:#b8901a;
---line:#37373d;
-color-scheme:dark
-}}
-
-:root[data-theme="dark"]{
---bg:#17171a;
---card:#232328;
---ink:#f2f2f4;
---mut:#a0a0a8;
---acc:#6a9bff;
---ok:#43c47a;
---sel:#b8901a;
---line:#37373d;
-color-scheme:dark
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17171a;
+    --card: #232328;
+    --ink: #f2f2f4;
+    --mut: #a0a0a8;
+    --acc: #6a9bff;
+    --ok: #43c47a;
+    --sel: #b8901a;
+    --line: #37373d;
+    color-scheme: dark;
+  }
 }
 
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{
-margin:0;
-background:var(--bg);
-color:var(--ink);
-font-family:system-ui,-apple-system,"Segoe UI",sans-serif
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
 }
 
-main{max-width:480px;margin:0 auto;padding:16px}
-h1{font-size:22px;margin:4px 0 12px}
-
-.card{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:14px;
-padding:14px;
-margin-bottom:12px
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-input{
-width:100%;
-box-sizing:border-box;
-font-size:16px;
-padding:12px;
-border-radius:10px;
-border:1px solid var(--line);
-background:var(--bg);
-color:var(--ink)
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-button{
-font-size:16px;
-padding:12px 16px;
-border:0;
-border-radius:10px;
-background:var(--acc);
-color:#fff;
-width:100%;
-margin-top:10px;
-cursor:pointer
+h1 {
+  font-size: 22px;
+  margin: 4px 0 12px;
+  text-align: center;
 }
 
-button:disabled{
-opacity:.6;
-cursor:not-allowed
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
 }
 
-#grid{
-display:grid;
-grid-template-columns:repeat(10,1fr);
-gap:2px;
-touch-action:none;
-user-select:none;
--webkit-user-select:none
+input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
 }
 
-.c{
-aspect-ratio:1;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:700;
-font-size:clamp(14px,4.6vw,22px);
-border-radius:6px;
-background:var(--bg)
+button {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--acc);
+  color: #fff;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-.c.s{background:var(--sel)}
-.c.f{background:var(--ok);color:#fff}
-
-#words{
-display:flex;
-flex-wrap:wrap;
-gap:6px
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
-.w{
-padding:4px 10px;
-border-radius:99px;
-background:var(--bg);
-font-size:14px
+#grid {
+  display: grid;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  gap: 2px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.w.f{
-text-decoration:line-through;
-color:var(--mut);
-background:var(--line)
+.c {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(10px, 3vw, 17px);
+  border-radius: 4px;
+  background: var(--bg);
 }
 
-.bar{
-display:flex;
-justify-content:space-between;
-color:var(--mut);
-font-size:15px;
-margin-bottom:8px
+.c.s {
+  background: var(--sel);
 }
 
-.hide{display:none}
-.mut{color:var(--mut);font-size:14px}
-
-#msg{
-margin-top:12px;
-font-size:15px;
-font-weight:600
+.c.f {
+  background: var(--ok);
+  color: #fff;
 }
+
+#words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.w {
+  padding: 5px 9px;
+  border-radius: 99px;
+  background: var(--bg);
+  font-size: 13px;
+}
+
+.w.f {
+  text-decoration: line-through;
+  color: var(--mut);
+  background: var(--line);
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  color: var(--mut);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#tm {
+  color: var(--acc);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.hide {
+  display: none;
+}
+
+.mut {
+  color: var(--mut);
+  font-size: 14px;
+}
+
+#msg {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
 </style>
 </head>
 
@@ -162,34 +182,42 @@ font-weight:600
 
 <p class="mut">
 Everyone gets a different puzzle. Find the hidden anti-corruption
-words by dragging across letters (any direction).
+words by dragging across letters in any direction.
 </p>
 
-<input id="nm" placeholder="Your name" maxlength="24" autocomplete="name">
+<input
+  id="nm"
+  placeholder="Your name"
+  maxlength="24"
+  autocomplete="name"
+>
 
 <button id="go">Start Game</button>
 
 </div>
 
+
 <div id="game" class="hide">
 
 <div class="bar">
-<span id="th"></span>
-<span id="tm">0:00</span>
-<span id="fc"></span>
+  <span id="th"></span>
+  <span id="tm">60s</span>
+  <span id="fc"></span>
 </div>
 
 <div class="card">
-<div id="grid"></div>
+  <div id="grid"></div>
 </div>
 
 <div class="card">
-<div id="words"></div>
+  <p class="mut">Find these 8 words:</p>
+  <div id="words"></div>
 </div>
 
 <button id="sub">Submit Score</button>
 
 </div>
+
 
 <div id="done" class="hide card">
 
@@ -199,6 +227,7 @@ words by dragging across letters (any direction).
 
 </div>
 
+
 <script>
 
 // =====================================
@@ -206,170 +235,214 @@ words by dragging across letters (any direction).
 // =====================================
 
 const GOOGLE_SHEET_URL =
-"https://script.google.com/macros/s/AKfycbyIPlbsVhpHxF1suQsL3JX_hNbyY0Hr4lF5WE4qJOTml2VJyhTLyPdtgkES0olMpPBA/exec"
+"https://script.google.com/macros/s/AKfycbyIPlbsVhpHxF1suQsL3JX_hNbyY0Hr4lF5WE4qJOTml2VJyhTLyPdtgkES0olMpPBA/exec";
 
 
 // =====================================
 // GAME SETTINGS
 // =====================================
 
-const N = 10;
-const LIMIT = 300;
+const N = 15;
+const LIMIT = 60;
+const WORDS_PER_GAME = 8;
 
 const THEMES = {
-"Anti-Corruption":[
-"BRIBERY",
-"FRAUD",
-"ETHICS",
-"HONESTY",
-"INTEGRITY",
-"AUDIT",
-"JUSTICE",
-"WHISTLE",
-"VIGILANCE",
-"EMBEZZLE",
-"KICKBACK",
-"NEPOTISM",
-"CRONYISM",
-"LAUNDER",
-"SCANDAL",
-"TRUST",
-"GRAFT",
-"PROBE",
-"COURT",
-"REPORT",
-"FAIR",
-"OPEN",
-"HONEST",
-"CLEAN",
-"SHAME",
-"GREED",
-"PUNISH",
-"OATH",
-"VOTE",
-"RULES"
-]
+  "Anti-Corruption": [
+    "BRIBE",
+    "CORRUPTION",
+    "COMPLIANCE",
+    "POLICY",
+    "OFFICIAL",
+    "GOVERNMENT",
+    "DILIGENCE",
+    "CERTIFICATION",
+    "AUDIT",
+    "SUBCONTRACTOR",
+    "VENDOR",
+    "SCREENING",
+    "APPROVAL",
+    "GIFT",
+    "TRAVEL",
+    "LODGING",
+    "SPONSORSHIP",
+    "UNIVERSITY",
+    "TENANT",
+    "MEMBERSHIP",
+    "TRAINING",
+    "REPORTING",
+    "HELPLINE",
+    "DISMISSED",
+    "INVESTIGATION",
+    "QUESTIONNAIRE",
+    "POLITICAL",
+    "CONTRIBUTION",
+    "MEALS",
+    "LEASE",
+    "GRANT",
+    "WHISTLEBLOWER",
+    "CLAUSES",
+    "CERTIFICATE"
+  ]
 };
 
-const DIRS=[
-[0,1],[1,0],[1,1],[-1,1],
-[0,-1],[-1,0],[-1,-1],[1,-1]
+
+const DIRS = [
+  [0,1],
+  [1,0],
+  [1,1],
+  [-1,1],
+  [0,-1],
+  [-1,0],
+  [-1,-1],
+  [1,-1]
 ];
 
-const $=id=>document.getElementById(id);
 
-let grid,words,found,t0,timer,name,theme;
-let submitted=false;
+const $ = id => document.getElementById(id);
 
-const pick=a=>a[Math.floor(Math.random()*a.length)];
+let grid;
+let words;
+let found;
+let t0;
+let timer;
+let name;
+let theme;
+let submitted = false;
+
+
+// =====================================
+// RANDOM HELPERS
+// =====================================
+
+function shuffle(array) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
+
+function pick(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+
+// =====================================
+// PLACE WORD IN GRID
+// =====================================
+
+function placeWord(word) {
+
+  const directions = shuffle(DIRS);
+
+  for (const [dr, dc] of directions) {
+
+    const positions = [];
+
+    for (let r = 0; r < N; r++) {
+      for (let c = 0; c < N; c++) {
+
+        const er = r + dr * (word.length - 1);
+        const ec = c + dc * (word.length - 1);
+
+        if (
+          er < 0 || er >= N ||
+          ec < 0 || ec >= N
+        ) continue;
+
+        positions.push([r, c]);
+
+      }
+    }
+
+    for (const [r, c] of shuffle(positions)) {
+
+      let valid = true;
+
+      for (let i = 0; i < word.length; i++) {
+
+        const rr = r + dr * i;
+        const cc = c + dc * i;
+
+        const existing = grid[rr][cc];
+
+        if (existing && existing !== word[i]) {
+          valid = false;
+          break;
+        }
+
+      }
+
+      if (!valid) continue;
+
+      for (let i = 0; i < word.length; i++) {
+
+        const rr = r + dr * i;
+        const cc = c + dc * i;
+
+        grid[rr][cc] = word[i];
+
+      }
+
+      return true;
+
+    }
+
+  }
+
+  return false;
+
+}
 
 
 // =====================================
 // BUILD PUZZLE
 // =====================================
 
-function build(){
+function build() {
 
-const keys=Object.keys(THEMES);
+  const keys = Object.keys(THEMES);
 
-theme=pick(keys);
+  theme = pick(keys);
 
-words=[...THEMES[theme]]
-.sort(()=>Math.random()-.5)
-.slice(0,8);
+  const selected = shuffle(THEMES[theme])
+    .slice(0, WORDS_PER_GAME);
 
-grid=Array.from(
-{length:N},
-()=>Array(N).fill("")
-);
+  // Retry if all selected words cannot be placed.
 
-for(const w of words){
+  let success = false;
 
-for(let a=0;a<300;a++){
+  for (let attempt = 0; attempt < 100; attempt++) {
 
-const [dr,dc]=pick(DIRS);
+    grid = Array.from(
+      { length: N },
+      () => Array(N).fill("")
+    );
 
-const r=Math.floor(Math.random()*N);
-const c=Math.floor(Math.random()*N);
+    const order = shuffle(selected);
 
-const er=r+dr*(w.length-1);
-const ec=c+dc*(w.length-1);
+    success = order.every(word => placeWord(word));
 
-if(er<0||er>=N||ec<0||ec>=N)continue;
+    if (success) {
+      words = selected;
+      break;
+    }
 
-let ok=true;
+  }
 
-for(let i=0;i<w.length;i++){
+  if (!success) {
+    throw new Error("Could not create puzzle. Please try again.");
+  }
 
-const g=grid[r+dr*i][c+dc*i];
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-if(g&&g!==w[i]){
-ok=false;
-break;
-}
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
 
-}
+      if (!grid[r][c]) {
+        grid[r][c] = pick(letters.split(""));
+      }
 
-if(!ok)continue;
+    }
+  }
 
-for(let i=0;i<w.length;i++){
-grid[r+dr*i][c+dc*i]=w[i];
-}
-
-break;
-
-}
-
-}
-
-const L="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-for(let r=0;r<N;r++){
-for(let c=0;c<N;c++){
-
-if(!grid[r][c]){
-grid[r][c]=pick(L.split(""));
-}
-
-}
-}
-
-words=words.filter(w=>{
-
-for(let r=0;r<N;r++){
-for(let c=0;c<N;c++){
-
-for(const [dr,dc] of DIRS){
-
-let i=0;
-
-while(i<w.length){
-
-const rr=r+dr*i;
-const cc=c+dc*i;
-
-if(
-rr<0||rr>=N||
-cc<0||cc>=N||
-grid[rr][cc]!==w[i]
-)break;
-
-i++;
-
-}
-
-if(i===w.length)return true;
-
-}
-
-}
-}
-
-return false;
-
-});
-
-found=new Set();
+  found = new Set();
 
 }
 
@@ -378,42 +451,44 @@ found=new Set();
 // RENDER GAME
 // =====================================
 
-function render(){
+function render() {
 
-const g=$("grid");
+  const g = $("grid");
 
-g.innerHTML="";
+  g.innerHTML = "";
 
-for(let r=0;r<N;r++){
+  for (let r = 0; r < N; r++) {
 
-for(let c=0;c<N;c++){
+    for (let c = 0; c < N; c++) {
 
-const d=document.createElement("div");
+      const d = document.createElement("div");
 
-d.className="c";
-d.dataset.r=r;
-d.dataset.c=c;
-d.textContent=grid[r][c];
+      d.className = "c";
+      d.dataset.r = r;
+      d.dataset.c = c;
+      d.textContent = grid[r][c];
 
-g.appendChild(d);
+      g.appendChild(d);
+
+    }
+
+  }
+
+  $("words").innerHTML = words.map(w =>
+    `<span class="w" id="w-${w}">${w}</span>`
+  ).join("");
+
+  $("th").textContent = "Theme: " + theme;
+
+  updateFound();
 
 }
 
-}
 
-$("words").innerHTML=words.map(w=>
-`<span class="w" id="w-${w}">${w}</span>`
-).join("");
+function updateFound() {
 
-$("th").textContent="Theme: "+theme;
-
-upd();
-
-}
-
-function upd(){
-
-$("fc").textContent=found.size+"/"+words.length;
+  $("fc").textContent =
+    found.size + "/" + words.length + " found";
 
 }
 
@@ -422,140 +497,154 @@ $("fc").textContent=found.size+"/"+words.length;
 // WORD SELECTION
 // =====================================
 
-let start=null;
-let path=[];
+let start = null;
+let path = [];
 
-const cellAt=(x,y)=>{
+const cellAt = (x, y) => {
 
-const e=document.elementFromPoint(x,y);
+  const e = document.elementFromPoint(x, y);
 
-return e&&e.dataset&&
-e.dataset.r!==undefined?e:null;
-
-};
-
-function line(a,b){
-
-const r0=+a.dataset.r;
-const c0=+a.dataset.c;
-
-const r1=+b.dataset.r;
-const c1=+b.dataset.c;
-
-const dr=r1-r0;
-const dc=c1-c0;
-
-if(!(dr===0||dc===0||Math.abs(dr)===Math.abs(dc))){
-return null;
-}
-
-const n=Math.max(Math.abs(dr),Math.abs(dc));
-
-const sr=Math.sign(dr);
-const sc=Math.sign(dc);
-
-const out=[];
-
-for(let i=0;i<=n;i++){
-
-out.push(
-document.querySelector(
-`[data-r="${r0+sr*i}"][data-c="${c0+sc*i}"]`
-)
-);
-
-}
-
-return out;
-
-}
-
-function mark(cells){
-
-document.querySelectorAll(".c.s")
-.forEach(e=>e.classList.remove("s"));
-
-cells.forEach(e=>e.classList.add("s"));
-
-}
-
-function bind(){
-
-const g=$("grid");
-
-g.onpointerdown=e=>{
-
-if(submitted)return;
-
-const c=cellAt(e.clientX,e.clientY);
-
-if(!c)return;
-
-start=c;
-path=[c];
-
-mark(path);
-
-g.setPointerCapture(e.pointerId);
+  return e &&
+    e.dataset &&
+    e.dataset.r !== undefined ? e : null;
 
 };
 
-g.onpointermove=e=>{
 
-if(!start)return;
+function line(a, b) {
 
-const c=cellAt(e.clientX,e.clientY);
+  const r0 = +a.dataset.r;
+  const c0 = +a.dataset.c;
 
-if(!c)return;
+  const r1 = +b.dataset.r;
+  const c1 = +b.dataset.c;
 
-const l=line(start,c);
+  const dr = r1 - r0;
+  const dc = c1 - c0;
 
-if(l){
-path=l;
-mark(l);
-}
+  if (!(dr === 0 || dc === 0 || Math.abs(dr) === Math.abs(dc))) {
+    return null;
+  }
 
-};
+  const n = Math.max(Math.abs(dr), Math.abs(dc));
 
-g.onpointerup=()=>{
+  const sr = Math.sign(dr);
+  const sc = Math.sign(dc);
 
-if(!start)return;
+  const out = [];
 
-const s=path.map(e=>e.textContent).join("");
+  for (let i = 0; i <= n; i++) {
 
-const rv=[...s].reverse().join("");
+    out.push(
+      document.querySelector(
+        `[data-r="${r0 + sr * i}"][data-c="${c0 + sc * i}"]`
+      )
+    );
 
-const w=words.find(x=>
-(x===s||x===rv)&&!found.has(x)
-);
+  }
 
-document.querySelectorAll(".c.s")
-.forEach(e=>{
-
-e.classList.remove("s");
-
-if(w)e.classList.add("f");
-
-});
-
-if(w){
-
-found.add(w);
-
-$("w-"+w).classList.add("f");
-
-upd();
-
-if(found.size===words.length){
-submit();
-}
+  return out;
 
 }
 
-start=null;
-path=[];
 
-};
+function mark(cells) {
+
+  document.querySelectorAll(".c.s")
+    .forEach(e => e.classList.remove("s"));
+
+  cells.forEach(e => e.classList.add("s"));
+
+}
+
+
+function bind() {
+
+  const g = $("grid");
+
+  g.onpointerdown = e => {
+
+    if (submitted) return;
+
+    const c = cellAt(e.clientX, e.clientY);
+
+    if (!c) return;
+
+    start = c;
+    path = [c];
+
+    mark(path);
+
+    g.setPointerCapture(e.pointerId);
+
+  };
+
+
+  g.onpointermove = e => {
+
+    if (!start) return;
+
+    const c = cellAt(e.clientX, e.clientY);
+
+    if (!c) return;
+
+    const l = line(start, c);
+
+    if (l) {
+      path = l;
+      mark(l);
+    }
+
+  };
+
+
+  g.onpointerup = () => {
+
+    if (!start) return;
+
+    const s = path.map(e => e.textContent).join("");
+
+    const rv = [...s].reverse().join("");
+
+    const w = words.find(x =>
+      (x === s || x === rv) && !found.has(x)
+    );
+
+    document.querySelectorAll(".c.s")
+      .forEach(e => {
+
+        e.classList.remove("s");
+
+        if (w) e.classList.add("f");
+
+      });
+
+
+    if (w) {
+
+      found.add(w);
+
+      $("w-" + w).classList.add("f");
+
+      updateFound();
+
+      if (found.size === words.length) {
+        submit();
+      }
+
+    }
+
+    start = null;
+    path = [];
+
+  };
+
+
+  g.onpointercancel = () => {
+    start = null;
+    path = [];
+    mark([]);
+  };
 
 }
 
@@ -564,17 +653,18 @@ path=[];
 // TIMER
 // =====================================
 
-function tick(){
+function tick() {
 
-const s=Math.floor((Date.now()-t0)/1000);
+  const elapsed = Math.floor((Date.now() - t0) / 1000);
 
-$("tm").textContent=
-Math.floor(s/60)+":"+
-String(s%60).padStart(2,"0");
+  const remaining = Math.max(0, LIMIT - elapsed);
 
-if(s>=LIMIT){
-submit();
-}
+  $("tm").textContent = "Time Left: " + remaining + "s";
+
+  if (remaining <= 0) {
+    clearInterval(timer);
+    submit();
+  }
 
 }
 
@@ -583,85 +673,79 @@ submit();
 // SUBMIT SCORE TO GOOGLE SHEETS
 // =====================================
 
-async function submit(){
+async function submit() {
 
-if(submitted)return;
+  if (submitted) return;
 
-submitted=true;
+  submitted = true;
 
-clearInterval(timer);
+  clearInterval(timer);
 
-$("sub").disabled=true;
+  $("sub").disabled = true;
 
-const secs=Math.min(
-LIMIT,
-Math.floor((Date.now()-t0)/1000)
-);
+  const secs = Math.min(
+    LIMIT,
+    Math.floor((Date.now() - t0) / 1000)
+  );
 
-const all=found.size===words.length;
+  const all = found.size === words.length;
 
-const score=
-found.size*100+
-(all?Math.max(0,LIMIT-secs):0);
-
-
-// Display result
-
-$("game").classList.add("hide");
-
-$("done").classList.remove("hide");
-
-$("res").textContent=
-name+": "+score+" pts";
-
-$("msg").textContent=
-"Submitting your score...";
+  const score =
+    found.size * 100 +
+    (all ? Math.max(0, LIMIT - secs) : 0);
 
 
-// Data to send to Google Sheets
+  $("game").classList.add("hide");
 
-const data={
+  $("done").classList.remove("hide");
 
-name:name,
+  $("res").textContent =
+    name + ": " + score + " pts";
 
-score:score,
-
-wordsFound:found.size+"/"+words.length,
-
-timeTaken:secs
-
-};
+  $("msg").textContent =
+    "Sending your score...";
 
 
-// Send score
+  const data = {
 
-try{
+    name: name,
 
-await fetch(GOOGLE_SHEET_URL,{
+    score: score,
 
-method:"POST",
+    wordsFound: found.size + "/" + words.length,
 
-mode:"no-cors",
+    timeTaken: secs
 
-headers:{
-"Content-Type":"text/plain;charset=utf-8"
-},
+  };
 
-body:JSON.stringify(data)
 
-});
+  try {
 
-$("msg").textContent=
-"✅ Your score has been submitted successfully! Thank you for playing.";
+    await fetch(GOOGLE_SHEET_URL, {
 
-}catch(error){
+      method: "POST",
 
-$("msg").textContent=
-"❌ Submission could not be confirmed. Please contact the event organizer.";
+      mode: "no-cors",
 
-console.error("Score submission error:",error);
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
 
-}
+      body: JSON.stringify(data)
+
+    });
+
+    $("msg").textContent =
+      "Your score submission request has been sent. Please check with the event organizer if your score does not appear.";
+
+  } catch (error) {
+
+    $("msg").textContent =
+      "Score submission could not be sent. Please contact the event organizer.";
+
+    console.error("Score submission error:", error);
+
+  }
 
 }
 
@@ -670,33 +754,46 @@ console.error("Score submission error:",error);
 // START GAME
 // =====================================
 
-$("go").onclick=()=>{
+$("go").onclick = () => {
 
-name=$("nm").value.trim();
+  name = $("nm").value.trim();
 
-if(!name){
+  if (!name) {
+    $("nm").focus();
+    return;
+  }
 
-$("nm").focus();
+  try {
 
-return;
+    build();
 
-}
+    render();
 
-build();
+    bind();
 
-render();
+  } catch (error) {
 
-bind();
+    alert("Unable to create the puzzle. Please try again.");
 
-$("start").classList.add("hide");
+    console.error(error);
 
-$("game").classList.remove("hide");
+    return;
 
-submitted=false;
+  }
 
-t0=Date.now();
+  $("start").classList.add("hide");
 
-timer=setInterval(tick,1000);
+  $("game").classList.remove("hide");
+
+  $("sub").disabled = false;
+
+  submitted = false;
+
+  t0 = Date.now();
+
+  tick();
+
+  timer = setInterval(tick, 1000);
 
 };
 
@@ -705,7 +802,7 @@ timer=setInterval(tick,1000);
 // MANUAL SUBMISSION
 // =====================================
 
-$("sub").onclick=submit;
+$("sub").onclick = submit;
 
 </script>
 
